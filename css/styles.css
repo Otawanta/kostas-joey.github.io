@@ -2002,3 +2002,331 @@ input:checked + .slider .moon {
 .player-checkbox input {
     margin-right: 0.5rem;
 }
+
+/* Tournament styles */
+.tournament-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.tournament-controls {
+    background-color: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+#tournament-form {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.tournament-progress {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.tournament-progress::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--border-color);
+    z-index: 1;
+}
+
+.progress-stage {
+    position: relative;
+    z-index: 2;
+    background-color: var(--bg-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.progress-stage.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.progress-stage.completed {
+    background-color: var(--success-color);
+    color: white;
+    border-color: var(--success-color);
+}
+
+.bracket-stage {
+    background-color: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.matches-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tournament-match {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.tournament-match.completed {
+    border-left-color: var(--success-color);
+}
+
+.tournament-match.team1-win .team1 {
+    font-weight: bold;
+    color: var(--success-color);
+}
+
+.tournament-match.team2-win .team2 {
+    font-weight: bold;
+    color: var(--success-color);
+}
+
+.match-teams {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.match-vs {
+    margin: 0 1rem;
+    font-weight: bold;
+}
+
+.match-actions button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.tournament-leaderboard {
+    background-color: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.leaderboard-list {
+    margin-top: 1rem;
+}
+
+.leaderboard-item {
+    display: grid;
+    grid-template-columns: 40px 2fr 1fr 1fr;
+    align-items: center;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.leaderboard-header {
+    font-weight: bold;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.tournament-history {
+    background-color: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-details {
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--bg-primary);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.score-inputs {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.score-input {
+    flex: 1;
+}
+
+.score-input input {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .tournament-match {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .match-actions {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .score-inputs {
+        flex-direction: column;
+    }
+    
+    .leaderboard-item {
+        grid-template-columns: 30px 2fr 1fr;
+    }
+}
+
+/* Team selection styling */
+.team-selection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+}
+
+.team-select-btn {
+    padding: 1rem;
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1;
+    text-align: center;
+}
+
+.team-select-btn:hover {
+    background-color: var(--hover-color);
+}
+
+.team-select-btn.selected {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.selection-instructions {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+/* Podium Styling */
+.tournament-podium {
+    margin-top: 1rem;
+}
+
+.podium-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 120px;
+    margin-top: 1.5rem;
+}
+
+.podium-place {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 4px;
+}
+
+.player-name {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+    width: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.podium-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    color: white;
+    font-weight: bold;
+}
+
+.first-place .podium-block {
+    height: 90px;
+    background-color: #ffd700; /* Gold */
+}
+
+.second-place .podium-block {
+    height: 70px;
+    background-color: #c0c0c0; /* Silver */
+}
+
+.third-place .podium-block {
+    height: 50px;
+    background-color: #cd7f32; /* Bronze */
+}

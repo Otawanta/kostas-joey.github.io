@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Donders Foosball League - Championships</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/favicon/foosball.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon/foosball.ico" type="image/x-icon">
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/twemoji@latest/dist/twemoji.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Championships</h1>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="stats.html">Stats</a>
+                <a href="championships.html" class="active">Championships</a>
+            </nav>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round">
+                        <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </div>
+                </label>
+            </div>
+        </header>
+
+        <div class="tournament-section">
+            <div class="tournament-controls">
+                <h2>Tournament Management</h2>
+                <button id="create-tournament" class="primary-button">Create New Tournament</button>
+                <div id="tournament-form" class="hidden">
+                    <h3>Tournament Setup</h3>
+                    <div class="form-group">
+                        <label for="tournament-name">Tournament Name</label>
+                        <input type="text" id="tournament-name" placeholder="Enter tournament name">
+                    </div>
+                    <button id="start-tournament" class="primary-button">Start Tournament</button>
+                </div>
+            </div>
+
+            <div class="active-tournament hidden" id="active-tournament">
+                <h2 id="tournament-title">Active Tournament</h2>
+                
+                <div class="tournament-progress">
+                    <div class="progress-stage active" data-stage="qualifiers">Qualifiers</div>
+                    <div class="progress-stage" data-stage="semifinals">Semifinals</div>
+                    <div class="progress-stage" data-stage="finals">Finals</div>
+                </div>
+                
+                <div class="tournament-brackets">
+                    <div class="bracket-stage" id="qualifiers-bracket">
+                        <h3>Qualifiers</h3>
+                        <div class="matches-list" id="qualifier-matches"></div>
+                    </div>
+                    
+                    <div class="bracket-stage hidden" id="semifinals-bracket">
+                        <h3>Semifinals</h3>
+                        <div class="matches-list" id="semifinal-matches"></div>
+                    </div>
+                    
+                    <div class="bracket-stage hidden" id="finals-bracket">
+                        <h3>Finals</h3>
+                        <div class="matches-list" id="final-matches"></div>
+                    </div>
+                </div>
+                
+                <div class="tournament-leaderboard">
+                    <h3>Tournament Standings</h3>
+                    <div class="leaderboard-list" id="tournament-leaderboard"></div>
+                </div>
+            </div>
+            
+            <div class="tournament-history">
+                <h2>Previous Tournaments</h2>
+                <div class="history-list" id="tournament-history-list"></div>
+            </div>
+        </div>
+    </div>
+    
+<!-- Match Result Modal -->
+<div id="match-result-modal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Select Winner</h2>
+        <div class="match-teams" id="modal-match-teams"></div>
+        <button id="save-match-result" class="primary-button">Save Result</button>
+    </div>
+</div>
+    
+    <!-- Firebase CDN - Make sure to use the same imports as your other pages -->
+    <script type="module" src="js/championships.js"></script>
+</body>
+</html>

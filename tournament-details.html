@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tournament Details - Donders Foosball League</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/favicon/foosball.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon/foosball.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tournament Details</h1>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="stats.html">Stats</a>
+                <a href="championships.html">Championships</a>
+            </nav>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round">
+                        <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </div>
+                </label>
+            </div>
+        </header>
+
+        <div class="tournament-details-section">
+            <div id="tournament-info" class="info-card">
+                <h2 id="tournament-name">Tournament Name</h2>
+                <div id="tournament-meta">
+                    <!-- Tournament meta info will be populated here -->
+                </div>
+            </div>
+            
+            <div class="tournament-results">
+                <h2>Tournament Results</h2>
+                <div id="tournament-bracket">
+                    <!-- Bracket will be populated here -->
+                </div>
+            </div>
+            
+            <div class="final-standings">
+                <h2>Final Standings</h2>
+                <div id="final-leaderboard">
+                    <!-- Leaderboard will be populated here -->
+                </div>
+            </div>
+            
+            <div class="back-button-container">
+                <a href="championships.html" class="primary-button">Back to Championships</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Custom JavaScript for this page -->
+    <script type="module" src="js/tournament-details.js"></script>
+</body>
+</html>
